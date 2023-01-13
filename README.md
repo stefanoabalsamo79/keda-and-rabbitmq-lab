@@ -1,0 +1,1 @@
+# keda-and-rabbitmq-lab
