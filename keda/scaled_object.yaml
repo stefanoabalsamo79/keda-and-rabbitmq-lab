@@ -13,7 +13,7 @@ spec:
     - type: rabbitmq
       metadata:
         metricName: my.queue.1-metrics
-        host: amqp://default_user_Nav6qGLo6MwqAtyGjzZ:xCb0jOBkrxTI81Gq3DNSVRNeDw1wm0IX@10.96.168.247:5672
+        host: amqp://default_user_ktZcW6F9CIxdu12bjeh:634-PTb6kfIQkV_1xkW7BIssJeybNqfA@10.96.103.197:5672
         protocol: auto
         mode: QueueLength # QueueLength | MessageRate
         value: "200"
