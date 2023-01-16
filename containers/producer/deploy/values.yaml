@@ -1,0 +1,9 @@
+helmReleaseName: producer
+artifactRegistry: ""
+name: producer
+version: 1.0.0
+namespace: keda
+rabbitUsername: "default_user_0gG8MV3rDQgvkaZhDcm"
+rabbitPassword: "xbqejJuxcPysbV5sLeio6sLdaaILnvoS"
+rabbitSvcIpPort: 10.96.7.155:5672
+queueName: my.queue.1

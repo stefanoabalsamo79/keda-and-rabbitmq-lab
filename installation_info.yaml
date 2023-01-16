@@ -1,0 +1,34 @@
+defaultClusterName: kind
+clusterName: test-cluster
+prometheusNamespace: default
+kedaNamespace: keda
+rabbitMqNamespace: rabbitmq-system
+
+deploymentNamespace: 
+  local: keda
+
+repositoryInfos:
+  local: 
+    artifactRegistry: ""
+
+images:
+  ingress-nginx-controller: 
+    imageSrc: registry.k8s.io/ingress-nginx/controller:v1.5.1@sha256:4ba73c697770664c1e00e9f968de14e08f606ff961c76e5d7033a4a9c593c629
+    imageDest: ingress-nginx-controller
+    imageTagDest: 1.5.1
+  kube-webhook-certgen:  
+    imageSrc: registry.k8s.io/ingress-nginx/kube-webhook-certgen:v20220916-gd32f8c343@sha256:39c5b2e3310dc4264d638ad28d9d1d96c4cbb2b2dcfb52368fe4e3c63f61e10f
+    imageDest: kube-webhook-certgen
+    imageTagDest: 20220916-gd32f8c343
+  keda-metrics-apiserver: 
+    imageSrc: ghcr.io/kedacore/keda-metrics-apiserver:2.9.1
+    imageDest: keda-metrics-apiserver
+    imageTagDest: 2.9.1
+  keda-operator: 
+    imageSrc: ghcr.io/kedacore/keda:2.9.1
+    imageDest: keda
+    imageTagDest: 2.9.1
+  rabbitmq-operator: 
+    imageSrc: rabbitmqoperator/cluster-operator:2.1.0
+    imageDest: cluster-operator
+    imageTagDest: 2.1.0

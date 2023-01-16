@@ -1,0 +1,22 @@
+apiVersion: keda.sh/v1alpha1
+kind: ScaledObject
+metadata:
+  name: consumer-app-scaled-object
+spec:
+  scaleTargetRef:
+    kind: Deployment
+    name: consumer-deployment
+  pollingInterval: 5
+  minReplicaCount: 1
+  maxReplicaCount: 5
+  triggers:
+    - type: rabbitmq
+      metadata:
+        metricName: my.queue.1-metrics
+        host: amqp://default_user_Nav6qGLo6MwqAtyGjzZ:xCb0jOBkrxTI81Gq3DNSVRNeDw1wm0IX@10.96.168.247:5672
+        protocol: auto
+        mode: QueueLength # QueueLength | MessageRate
+        value: "200"
+        activationValue: "10"
+        queueName: my.queue.1
+        vhostName: /
